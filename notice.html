@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noticehub</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'user/css/style.css'%}">
+</head>
+<body>
+    <div class="header">
+        <h1 align="center">CreArt Solution - Web App</h1>
+    </div>
+
+    <div class="content">
+    
+        <h1 class="sliding-text" style="text-decoration: underline; color: black;">Latest Notices      <span>Latest Notice </span> <span> Latest Notice</span></h1>
+        
+        {% for row in result %}
+        <div class="notice">
+            <h3>{{row.subject}}</h3>
+            <p>{{row.description}}</p>
+            <p>Created At: {{row.created_at}}</p>
+            <p>Updated At: {{row.updated_at}}</p>
+        </div>
+        {% endfor %} 
+    </div>
+
+    <div class="footer" align="center">@copyright</div>
+</body>
+</html>
